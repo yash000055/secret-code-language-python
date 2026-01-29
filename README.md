@@ -1,35 +1,117 @@
 # Secret Code Language Translator using Python
-A simple Python program that encodes and decodes English text into a secret code language using string manipulation and random characters.
+This is a Python program that encodes normal English text into a secret code language and decodes it back to readable English using predefined transformation rules.
 
-## How It Works :
+Description
 
--When you run the program, it asks:
--ENCODE or DECODE
+The program performs encoding and decoding of text based on word length. It uses string manipulation, random character insertion, and vowel substitution to generate a secret-coded message. The decoding logic reverses the same process to retrieve the original message.
 
-## Encoding Rules :
+Features
 
--If word length ≥ 3:
--Move first 3 letters to the end
--Add random characters at start & end
--Replace vowels:
-a	e	i	o	u
-@	#	$	%	&
+Encode English text into a secret code language.
 
--If word length < 3:
-Reverse the word
+Decode secret code back into readable English.
 
-## Decoding Rules :
+Uses random characters for obfuscation.
 
--If word length ≥ 3:
--Remove random characters from start & end
--Move last 3 letters to the beginning
--Replace symbols back to vowels
--If word length < 3:
-Reverse the word
+Simple command-line interface.
 
-## Run the Program :
--python secret_code.py
+Handles multi-word input.
 
-## Tech Used :
--Python 3
--random module
+Encoding Rules
+
+For each word in the input message:
+
+Case 1: Word length is 3 or more characters
+
+Convert the word to lowercase.
+
+Remove the first three characters and append them to the end of the word.
+
+Add four random characters at the beginning and four random characters at the end.
+
+Replace vowels with special symbols:
+
+a → @
+
+e → #
+
+i → $
+
+o → %
+
+u → &
+
+Case 2: Word length is less than 3 characters
+
+Reverse the word.
+
+Decoding Rules
+
+For each word in the encoded message:
+
+Case 1: Word length is 3 or more characters
+
+Remove four characters from the start and four characters from the end.
+
+Take the last three characters and move them to the beginning.
+
+Replace special symbols back to vowels:
+
+@ → a
+
+→ e
+
+$ → i
+
+% → o
+
+& → u
+
+Case 2: Word length is less than 3 characters
+
+Reverse the word.
+
+How to Run
+
+Ensure Python 3 is installed on your system.
+
+Clone the repository:
+
+git clone https://github.com/your-username/secret-code-language.git
+
+
+Navigate to the project directory:
+
+cd secret-code-language
+
+
+Run the program:
+
+python secret_code.py
+
+Usage
+
+After running the program, you will be prompted to choose an operation:
+
+What you want to do 'ENCODE' OR 'DECODE' :
+
+
+Enter the desired option and then provide the message when prompted.
+
+Notes
+
+Encoded output varies each time due to random character selection.
+
+Decoding works correctly only for text encoded using this program.
+
+All input text is converted to lowercase.
+
+Technologies Used
+
+Python 3
+
+random module
+
+Author
+
+Yash Sharma
